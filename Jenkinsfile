@@ -1,10 +1,9 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Example') {
             steps {
-                sh 'echo "Hello World! First Jenkins Pipeline"'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
     }
